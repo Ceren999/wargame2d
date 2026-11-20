@@ -24,8 +24,8 @@ jobs:
         
       - name: Test application startup
         run: |
-          timeout 30s uv run python main.py > app.log 2>&1 &
-          APP_PID=$ !
+          uv run python main.py > app.log 2>&1 &
+          APP_PID=$!
           sleep 15
           cat app.log
           if kill -0 "$APP_PID" 2>/dev/null; then
@@ -33,4 +33,4 @@ jobs:
           else 
             echo "Application stopped during stratup."
             exit 1
-         fi
+          fi
