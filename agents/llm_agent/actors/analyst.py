@@ -212,6 +212,7 @@ def _format_step_logs(history: dict[int, dict], max_turns: int, current_turn: in
 
 analyst_agent = Agent[GameDeps, AnalystOutput](
     "openrouter:x-ai/grok-4.1-fast",#"openrouter:deepseek/deepseek-v3.1-terminus:exacto",
+    defer_model_check=True,
     deps_type=GameDeps,
     output_type=AnalystOutput,
     model_settings=OpenRouterModelSettings(
