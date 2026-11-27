@@ -121,6 +121,7 @@ Strategist & analyst doesn't see the full state, you do. You are the final decis
 
 executer_agent = Agent[GameDeps, TeamTurnPlan](
     "openrouter:x-ai/grok-4.1-fast",#"openrouter:deepseek/deepseek-v3.1-terminus:exacto",
+    defer_model_check=True,
     deps_type=GameDeps,
     output_type=TeamTurnPlan,
     model_settings=OpenRouterModelSettings(
