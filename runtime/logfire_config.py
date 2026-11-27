@@ -17,5 +17,5 @@ def configure_logfire(service_name: str = "wargame2d") -> None:
 
     Idempotent: repeated calls in the same process no-op after the first.
     """
-    logfire.configure(service_name=service_name)
+    logfire.configure(service_name=service_name, send_to_logfire="if-token-present")
     logfire.instrument_pydantic_ai()
