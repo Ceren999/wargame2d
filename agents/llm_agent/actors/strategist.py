@@ -110,6 +110,7 @@ Act as a strategic director, not a field commander — focus on high-level, endu
 
 strategist_agent = Agent[GameDeps, StrategyOutput](
     "openrouter:x-ai/grok-4.1-fast", #"openrouter:deepseek/deepseek-v3.1-terminus:exacto",
+    defer_model_check=True,
     deps_type=GameDeps,
     output_type=StrategyOutput,           
     model_settings=OpenRouterModelSettings(
